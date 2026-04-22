@@ -1,13 +1,361 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=./index.html">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Redirecting...</title>
-  <link rel="canonical" href="./index.html">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakthivel J | Robotics Software Engineer</title>
+    <meta name="description" content="Portfolio of Sakthivel J, Robotics Software Engineer specializing in high-performance interfaces and control systems.">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0b1120;
+            --surface-color: rgba(30, 41, 59, 0.7);
+            --surface-border: rgba(255, 255, 255, 0.1);
+            --primary: #0ea5e9;
+            --primary-gradient: linear-gradient(135deg, #0ea5e9, #6366f1);
+            --text-main: #f8fafc;
+            --text-secondary: #94a3b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(14, 165, 233, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(99, 102, 241, 0.15) 0px, transparent 50%);
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Glassmorphism Classes */
+        .glass-panel {
+            background: var(--surface-color);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--surface-border);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .glass-panel:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            color: var(--text-main);
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            border-bottom: 2px solid var(--primary);
+            display: inline-block;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .headline {
+            font-size: 1.2rem;
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+
+        /* Layout & Sections */
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-top: 4rem;
+        }
+
+        .profile-img-placeholder {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: var(--primary-gradient);
+            margin: 0 auto 1.5rem auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: bold;
+            color: white;
+            box-shadow: 0 0 20px rgba(14, 165, 233, 0.4);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        /* Timeline for Experience */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--surface-border);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.35rem;
+            top: 0.3rem;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 3px solid var(--bg-color);
+        }
+
+        .job-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 0.2rem;
+        }
+
+        .company-name {
+            font-size: 1.1rem;
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .job-meta {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.8rem;
+            display: flex;
+            gap: 1rem;
+            opacity: 0.8;
+        }
+
+        /* Tags for skills */
+        .skills-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .skill-tag {
+            background: rgba(14, 165, 233, 0.1);
+            color: var(--primary);
+            border: 1px solid rgba(14, 165, 233, 0.3);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        @media (min-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-in {
+            animation: fadeIn 0.8s ease forwards;
+            opacity: 0;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+
+    </style>
 </head>
 <body>
-  <p>Redirecting to <a href="./index.html">index.html</a>...</p>
+
+    <div class="container">
+        <!-- Header Section -->
+        <header class="animate-in">
+            <div class="profile-img-placeholder">SJ</div>
+            <h1>Sakthivel J</h1>
+            <div class="headline">Robotics Software Engineer | Custom SDK & Ground-Control Interface Integration</div>
+            <p style="text-align: center; max-width: 600px; margin: 0 auto;">Greater Chennai Area • Science and Technology Volunteer</p>
+        </header>
+
+        <!-- About Section -->
+        <section class="glass-panel animate-in delay-1" id="about">
+            <h2>About Me</h2>
+            <div class="about-grid">
+                <div>
+                    <p>I’m a Software Engineer specializing in building high-performance interfaces and control systems for robotics and real-time platforms. My work spans end-to-end development from designing responsive front-end interfaces to developing deeply integrated back-end logic for autonomous and remotely operated systems.</p>
+                    <p>I focus on creating reliable, intuitive, and mission-critical applications that bridge hardware, firmware, and user interaction. My experience includes developing modular UI components, integrating custom SDKs, optimizing communication layers, and tailoring control dashboards for complex vehicle and sensor ecosystems.</p>
+                </div>
+                <div>
+                    <p>I enjoy working at the intersection of software and systems engineering, where clean architecture, stable data pipelines, and strong UX directly influence real-world performance. I’m passionate about solving technical challenges, improving system usability, and contributing to teams building next-generation automation technology.</p>
+                    <p><strong>Notable Hardware & Workflow Experience:</strong></p>
+                    <ul>
+                        <li style="color: var(--text-secondary); margin-left: 1.2rem; margin-bottom: 0.5rem;">Led hardware development for a motorized turntable system (Bluetooth control, embedded firmware).</li>
+                        <li style="color: var(--text-secondary); margin-left: 1.2rem;">Supported end-to-end production workflow for clear dental aligners using 3D printing (DFM, post-print processing).</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section class="glass-panel animate-in delay-2" id="experience">
+            <h2>Experience</h2>
+            <div class="timeline">
+                
+                <!-- Coratia Technologies -->
+                <div class="timeline-item">
+                    <div class="job-title">Software Analyst / Software Engineer</div>
+                    <div class="company-name">Coratia Technologies Pvt. Ltd.</div>
+                    <div class="job-meta">
+                        <span>🗓️ May 2023 - Present (3 yrs total scope)</span>
+                        <span>📍 Hybrid / On-site / Remote</span>
+                    </div>
+                    <p>Progressed through roles from part-time Software Engineer to full-time Software Analyst. Architected software solutions, developed responsive user interfaces, and integrated custom components for control platforms.</p>
+                    <div class="skills-wrapper">
+                        <span class="skill-tag">ArduPilot Systems</span>
+                        <span class="skill-tag">Custom SDKs</span>
+                        <span class="skill-tag">UI/UX</span>
+                        <span class="skill-tag">Software Architecture</span>
+                    </div>
+                </div>
+
+                <!-- BIONIC Imprints -->
+                <div class="timeline-item">
+                    <div class="job-title">Research And Development Engineer</div>
+                    <div class="company-name">BIONIC Imprints Private Limited</div>
+                    <div class="job-meta">
+                        <span>🗓️ Feb 2022 - Jan 2024 (2 yrs)</span>
+                        <span>📍 Goa, India</span>
+                    </div>
+                    <p>Innovated and developed research-driven engineering solutions spanning hardware and software integration.</p>
+                    <div class="skills-wrapper">
+                        <span class="skill-tag">Machine Learning</span>
+                        <span class="skill-tag">Django</span>
+                        <span class="skill-tag">+10 more skills</span>
+                    </div>
+                </div>
+
+                <!-- PhotoGAUGE -->
+                <div class="timeline-item">
+                    <div class="job-title">Metrology Technician</div>
+                    <div class="company-name">PhotoGAUGE</div>
+                    <div class="job-meta">
+                        <span>🗓️ Aug 2018 - Nov 2021 (3 yrs 4 mos)</span>
+                        <span>📍 India (Hybrid)</span>
+                    </div>
+                    <p>PhotoGAUGE provides engineering measurements using photos from commodity cameras and smartphones. Played a key role in prototyping processes and data acquisition.</p>
+                    <div class="skills-wrapper">
+                        <span class="skill-tag">Turntable</span>
+                        <span class="skill-tag">Prototyping</span>
+                    </div>
+                </div>
+
+                <!-- Magic studios -->
+                <div class="timeline-item">
+                    <div class="job-title">Design Engineer</div>
+                    <div class="company-name">Magic studios</div>
+                    <div class="job-meta">
+                        <span>🗓️ Dec 2017 - May 2018 (6 mos)</span>
+                        <span>📍 Greater Chennai Area (On-site)</span>
+                    </div>
+                    <p>Committed to understanding industry needs and providing maximally effective solutions involving CAD and physical prototyping.</p>
+                    <div class="skills-wrapper">
+                        <span class="skill-tag">Arduino</span>
+                        <span class="skill-tag">SolidWorks</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Education & Certifications Grid -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+            <!-- Education Section -->
+            <section class="glass-panel animate-in delay-3" id="education" style="margin-bottom: 0;">
+                <h2>Education</h2>
+                
+                <div style="margin-bottom: 1.5rem;">
+                    <div class="job-title" style="font-size: 1.1rem;">B.E, Aeronautical Engineering</div>
+                    <div class="company-name" style="font-size: 1rem; color: var(--text-main);">G.K.M. College of Engineering and Technology</div>
+                    <div class="job-meta">2013 - 2017</div>
+                </div>
+
+                <div>
+                    <div class="job-title" style="font-size: 1.1rem;">High School, Math & Computer Science</div>
+                    <div class="company-name" style="font-size: 1rem; color: var(--text-main);">Jaigobal Garodia National Hr Sec School</div>
+                    <div class="job-meta">2011 - 2013</div>
+                </div>
+            </section>
+
+            <!-- Certifications Section -->
+            <section class="glass-panel animate-in delay-3" id="certifications" style="margin-bottom: 0;">
+                <h2>Licenses & Certifications</h2>
+                
+                <div>
+                    <div class="job-title" style="font-size: 1.1rem; line-height: 1.4;">Applications of Soft-computing Techniques and Numerical Modelling in "Additive Manufacturing"</div>
+                    <div class="company-name" style="font-size: 1rem; color: var(--text-main); margin-top: 0.5rem;">Sardar Vallabhbhai National Institute of Technology</div>
+                    <div class="job-meta">Issued Dec 2022 • Credential ID SVNIT/STTP/A2MP2022/158</div>
+                    <div class="skills-wrapper">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">ImageJ</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </div>
+
 </body>
 </html>
